@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Dashboard | GreenGrow Nursery</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .database-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+        }
+
+        .db-title {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .db-subtitle {
+            color: var(--muted);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .data-table-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--glass-border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        td {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(43, 122, 11, 0.1);
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: rgba(43, 122, 11, 0.05);
+        }
+
+        .variety-tag {
+            background: rgba(125, 209, 59, 0.2);
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--primary-dark);
+            margin-right: 5px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .info-card {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border-left: 5px solid var(--primary);
+        }
+
+        .loading-text {
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: bold;
+            animation: pulse-glow 1.5s infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Ambient nature background -->
+    <div id="leavesContainer" class="leaves-container"></div>
+
+    <header class="site-header">
+        <div class="container nav-bar">
+            <a href="index.html" class="logo">🌿 Nisarge Admin</a>
+            <nav class="nav-links" id="navLinks" style="display:flex;">
+                <a href="#" id="logoutBtn" class="btn pulse-glow">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="database-header glass">
+            <div>
+                <h1 class="db-title">🗄️ Plant Database</h1>
+                <p class="db-subtitle">Current Inventory loaded from backend</p>
+            </div>
+            <a href="index.html" class="btn outline-btn">View Live Site</a>
+        </div>
+
+        <div class="data-table-container glass">
+            <table id="plantTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Plant Name</th>
+                        <th>Available Varieties</th>
+                        <th>Pricing Metrics (₹)</th>
+                        <th>Stock Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td colspan="5">
+                            <div class="loading-text">Fetching data from the forest... 🍃</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-card glass">
+            <h3>💡 How this database works:</h3>
+            <p>
+                This table is dynamically fetching live data from the <code>GET /plants</code> API endpoint via your
+                Node.js (Express) server.<br><br>
+                <strong>Where is the database located?</strong><br>
+                It is currently stored as a JSON file named <code>plants.json</code> in the root folder of this codebase
+                (<code>c:\pr1\plants.json</code>). <br>
+                <strong>How do I add a new plant?</strong><br>
+                Simply open `plants.json` in any text editor or IDE and add a new block to the array, following the same
+                format. Once you save it, this dashboard will immediately reflect the new data!
+            </p>
+        </div>
+
+    </main>
+
+    <script type="module" src="script.js"></script>
+    <script>
+        // Check if actually logged in
+        if (localStorage.getItem('greengrow_logged_in') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        // Handle Logout
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('greengrow_logged_in');
+            window.location.href = 'index.html';
+        });
+
+        // Fetch data from our JSON Database endpoint
+        async function loadDatabase() {
+            const tableBody = document.getElementById('tableBody');
+            try {
+                const response = await fetch('/plants');
+                const plants = await response.json();
+
+                tableBody.innerHTML = ''; // Clear loading text
+
+                plants.forEach(plant => {
+                    const tr = document.createElement('tr');
+
+                    // Format varieties into nice tags
+                    const varietiesHtml = plant.varieties.map(v => `<span class="variety-tag">${v}</span>`).join('');
+
+                    // Format prices mapping
+                    const pricesArray = Object.entries(plant.price).map(([size, price]) => `${size}: ₹${price}`);
+                    const pricesHtml = pricesArray.map(p => `<div>${p}</div>`).join('');
+
+                    // Generate Stock Status
+                    const stockStatusHtml = (plant.id % 6 === 0 || plant.id === 13) ? '<span style="color: #d9534f; font-weight: 700;">❌ Out of Stock</span>' : '<span style="color: var(--primary); font-weight: 700;">✅ In Stock</span>';
+
+                    tr.innerHTML = `
+                        <td><strong>#${plant.id}</strong></td>
+                        <td style="font-size: 1.1rem; color: var(--primary);"><strong>${plant.name}</strong></td>
+                        <td>${varietiesHtml}</td>
+                        <td>${pricesHtml}</td>
+                        <td>${stockStatusHtml}</td>
+                    `;
+                    tableBody.appendChild(tr);
+                });
+
+            } catch (error) {
+                console.error("Database fetch error, falling back to local object", error);
+
+                // Fallback Data for when Node.js is not installed
+                const fallbackPlants = [
+                    { id: 1, name: "Aloe Vera", varieties: ["Small", "Medium", "Large"], price: { "Small": 100, "Medium": 200, "Large": 300 } },
+                    { id: 2, name: "Snake Plant (Sansevieria)", varieties: ["Small", "Medium", "Large"], price: { "Small": 150, "Medium": 250, "Large": 350 } },
+                    { id: 3, name: "Tulsi (Holy Basil)", varieties: ["Small", "Medium"], price: { "Small": 80, "Medium": 150 } },
+                    { id: 4, name: "Classic Red Rose", varieties: ["Red", "Pink", "White"], price: { "Red": 120, "Pink": 130, "White": 140 } },
+                    { id: 5, name: "Monstera Deliciosa", varieties: ["Medium", "Large", "Giant"], price: { "Medium": 500, "Large": 800, "Giant": 1200 } },
+                    { id: 6, name: "Peace Lily", varieties: ["Small", "Medium"], price: { "Small": 200, "Medium": 400 } },
+                    { id: 7, name: "Fiddle Leaf Fig", varieties: ["Medium", "Large", "Tree"], price: { "Medium": 600, "Large": 900, "Tree": 1500 } },
+                    { id: 8, name: "Golden Pothos (Devil's Ivy)", varieties: ["Hanging Basket", "Standing Pot"], price: { "Hanging Basket": 300, "Standing Pot": 250 } },
+                    { id: 9, name: "Spider Plant", varieties: ["Small", "Hanging Basket"], price: { "Small": 120, "Hanging Basket": 280 } },
+                    { id: 10, name: "ZZ Plant (Zamioculcas)", varieties: ["Small", "Medium", "Large"], price: { "Small": 180, "Medium": 350, "Large": 600 } },
+                    { id: 11, name: "Bamboo Palm", varieties: ["Medium", "Large"], price: { "Medium": 450, "Large": 750 } },
+                    { id: 12, name: "Money Plant", varieties: ["Small Glass", "Medium Pot", "Large Totem"], price: { "Small Glass": 150, "Medium Pot": 200, "Large Totem": 500 } },
+                    { id: 13, name: "Jade Plant", varieties: ["Miniature", "Bonsai Style"], price: { "Miniature": 200, "Bonsai Style": 800 } },
+                    { id: 14, name: "Bird of Paradise", varieties: ["Medium", "Large"], price: { "Medium": 700, "Large": 1300 } },
+                    { id: 15, name: "Lavender", varieties: ["Small Seedling", "Bush"], price: { "Small Seedling": 100, "Bush": 350 } },
+                    { id: 16, name: "Bonsai Ficus", varieties: ["5 Years Old", "10 Years Old", "20 Years Old"], price: { "5 Years Old": 800, "10 Years Old": 2500, "20 Years Old": 5000 } },
+                    { id: 17, name: "Chinese Evergreen", varieties: ["Pink Array", "Silver Queen"], price: { "Pink Array": 350, "Silver Queen": 400 } },
+                    { id: 18, name: "Rubber Plant", varieties: ["Small", "Medium", "Large"], price: { "Small": 180, "Medium": 400, "Large": 700 } },
+                    { id: 19, name: "Areca Palm", varieties: ["Indoor Pot", "Outdoor Base", "Giant Tree"], price: { "Indoor Pot": 300, "Outdoor Base": 600, "Giant Tree": 1200 } },
+                    { id: 20, name: "Pilea Peperomioides", varieties: ["Miniature", "Full Size"], price: { "Miniature": 250, "Full Size": 450 } },
+                    { id: 21, name: "String of Pearls", varieties: ["Small Cup", "Trailing Basket"], price: { "Small Cup": 200, "Trailing Basket": 550 } },
+                    { id: 22, name: "Boston Fern", varieties: ["Standard", "Large Hanging"], price: { "Standard": 150, "Large Hanging": 350 } },
+                    { id: 23, name: "Philodendron Pink Princess", varieties: ["Cutting", "Rooted Plant"], price: { "Cutting": 1500, "Rooted Plant": 4500 } },
+                    { id: 24, name: "Cast Iron Plant", varieties: ["Small", "Medium"], price: { "Small": 300, "Medium": 600 } },
+                    { id: 25, name: "Orchid (Phalaenopsis)", varieties: ["Single Spike", "Double Spike", "Premium Collector"], price: { "Single Spike": 600, "Double Spike": 900, "Premium Collector": 2500 } }
+                ];
+
+                tableBody.innerHTML = '';
+                fallbackPlants.forEach(plant => {
+                    const tr = document.createElement('tr');
+                    const varietiesHtml = plant.varieties.map(v => `<span class="variety-tag">${v}</span>`).join('');
+                    const pricesArray = Object.entries(plant.price).map(([size, price]) => `${size}: ₹${price}`);
+                    const pricesHtml = pricesArray.map(p => `<div>${p}</div>`).join('');
+
+                    // Generate Stock Status
+                    const stockStatusHtml = (plant.id % 6 === 0 || plant.id === 13) ? '<span style="color: #d9534f; font-weight: 700;">❌ Out of Stock</span>' : '<span style="color: var(--primary); font-weight: 700;">✅ In Stock</span>';
+
+                    tr.innerHTML = `
+                        <td><strong>#${plant.id}</strong></td>
+                        <td style="font-size: 1.1rem; color: var(--primary);"><strong>${plant.name}</strong></td>
+                        <td>${varietiesHtml}</td>
+                        <td>${pricesHtml}</td>
+                        <td>${stockStatusHtml}</td>
+                    `;
+                    tableBody.appendChild(tr);
+                });
+
+                // Alert the user they are in offline mode
+                const infoCard = document.querySelector('.info-card');
+                infoCard.innerHTML = `<h3>⚠️ Offline Mode Active</h3><p>Since Node.js is not installed on your system, the dashboard is displaying local fallback data directly inside the browser. To edit this data, you would normally edit the <code>plants.json</code> and run the server.</p>`;
+            }
+        }
+
+        // Initialize fetch on load
+        loadDatabase();
+    </script>
+</body>
+
+</html>

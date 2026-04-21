@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GreenGrow Nursery is a responsive online plant booking nursery system with eco-friendly design and smooth browsing.">
+    <title>GreenGrow Nursery | Online Plant Booking Nursery System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Floating Leaves Particle Container -->
+    <div id="leavesContainer" class="leaves-container"></div>
+
+    <header class="site-header">
+        <div class="container nav-bar">
+            <a href="#home" class="logo">🌿 Nisarg Nursery</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#plants">Plants</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <select id="langSwitcher"
+                    style="margin-right: 15px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--primary); background: transparent; color: var(--primary); font-weight: 600; cursor: pointer; font-family: 'Poppins'; outline: none;">
+                    <option value="en">Eng</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                <a href="login.html" class="login-btn pulse-glow">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">Eco-friendly booking experience</div>
+                    <h1>Bring Nature to Your Home 🌱</h1>
+                    <p>Book your favorite plants online easily and turn every corner into a fresh, green, calming space.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#plants" class="btn pulse-glow">Explore Plants</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <strong>200+</strong>
+                            <span>Healthy plants</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong>Fast</strong>
+                            <span>Doorstep delivery</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong>Easy</strong>
+                            <span>Online booking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <span>About the System</span>
+                    <h2>Simple online plant booking for every home and garden</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-copy glass">
+                        <p>
+                            This nursery system allows users to browse, select, and book plants online with ease. We
+                            provide
+                            healthy plants with fast delivery.
+                        </p>
+                        <p>
+                            GreenGrow Nursery blends convenience with care by helping customers discover beautiful
+                            greenery, read
+                            useful details, and place bookings confidently from any device.
+                        </p>
+                    </div>
+                    <div class="about-images">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=900&q=80"
+                                alt="Indoor nursery plants" />
+                        </figure>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80"
+                                alt="Plant pots in nursery" />
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <span>Why Choose Us</span>
+                    <h2>Everything you need for an easy plant booking experience</h2>
+                    <p>Each feature is designed to make browsing, booking, and caring for your plants simple and
+                        enjoyable.</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card glass">
+                        <div class="feature-icon">🌿</div>
+                        <h3>Wide Variety of Plants</h3>
+                        <p>Explore a rich collection of indoor, outdoor, decorative, and useful plants curated for every
+                            kind of space.</p>
+                        <ul>
+                            <li>Indoor, outdoor, flowering, medicinal plants</li>
+                            <li>Seasonal and rare plants available</li>
+                            <li>Suitable for all environments</li>
+                        </ul>
+                    </article>
+
+                    <article class="feature-card glass">
+                        <div class="feature-icon">🛒</div>
+                        <h3>Easy Online Booking</h3>
+                        <p>Our booking flow is simple, clear, and beginner-friendly so users can select plants without
+                            confusion.</p>
+                        <ul>
+                            <li>Simple interface for selecting plants</li>
+                            <li>Add to cart and quick checkout</li>
+                            <li>Order tracking available</li>
+                        </ul>
+                    </article>
+
+                    <article class="feature-card glass">
+                        <div class="feature-icon">🍃</div>
+                        <h3>Healthy & Fresh Plants</h3>
+                        <p>We prioritize plant quality through expert care, clean growing conditions, and careful
+                            nursery management.</p>
+                        <ul>
+                            <li>Grown with expert care</li>
+                            <li>Disease-free and high quality</li>
+                            <li>Organic growing methods</li>
+                        </ul>
+                    </article>
+
+                    <article class="feature-card glass">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Fast Delivery</h3>
+                        <p>Plants are packed with protection and delivered quickly so they arrive fresh and ready for
+                            their new home.</p>
+                        <ul>
+                            <li>Safe and eco-friendly packaging</li>
+                            <li>Quick doorstep delivery</li>
+                            <li>Damage protection ensured</li>
+                        </ul>
+                    </article>
+
+                    <article class="feature-card glass">
+                        <div class="feature-icon">🪴</div>
+                        <h3>Gardening Support</h3>
+                        <p>Helpful care guidance makes it easier for beginners and hobby gardeners to keep plants
+                            healthy for longer.</p>
+                        <ul>
+                            <li>Plant care instructions included</li>
+                            <li>Tips for watering and sunlight</li>
+                            <li>Beginner-friendly guidance</li>
+                        </ul>
+                    </article>
+
+                    <article class="feature-card glass">
+                        <div class="feature-icon">💳</div>
+                        <h3>Secure Payments</h3>
+                        <p>Checkout is built to feel safe and reliable with flexible payment methods and instant
+                            confirmation.</p>
+                        <ul>
+                            <li>UPI, Card, Net Banking options</li>
+                            <li>Safe and encrypted transactions</li>
+                            <li>Instant order confirmation</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="plants">
+            <div class="container">
+                <div class="section-heading">
+                    <span>Featured Plants</span>
+                    <h2>Popular plants ready for online booking</h2>
+                    <p>Choose from customer favorites that fit homes, balconies, gardens, and workspaces beautifully.
+                    </p>
+                </div>
+                <div class="plants-grid">
+                    <article class="plant-card glass">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+                                alt="Aloe Vera plant" />
+                        </div>
+                        <div class="plant-card-content">
+                            <span style="display:inline-block; font-size:0.75rem; font-weight:700; background:var(--primary); color:#fff; padding:3px 8px; border-radius:4px; margin-bottom:5px; width: fit-content;">Medicinal Plants</span>
+                            <h3 style="margin: 0.3rem 0;">Aloe Vera</h3>
+                            <p style="font-size: 0.9rem; margin-bottom: 0.8rem; font-weight: 600;">Color: Light Green</p>
+                            <a href="#booking" class="card-action" onclick="window.prefillBooking('Medicinal Plants', 'Aloe Vera')">Book Now</a>
+                        </div>
+                    </article>
+
+                    <article class="plant-card glass">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1463154545680-d59320fd685d?auto=format&fit=crop&w=900&q=80"
+                                alt="Snake Plant" />
+                        </div>
+                        <div class="plant-card-content">
+                            <span style="display:inline-block; font-size:0.75rem; font-weight:700; background:var(--primary); color:#fff; padding:3px 8px; border-radius:4px; margin-bottom:5px; width: fit-content;">Indoor Plants</span>
+                            <h3 style="margin: 0.3rem 0;">Snake Plant</h3>
+                            <p style="font-size: 0.9rem; margin-bottom: 0.8rem; font-weight: 600;">Color: Dark Green/Yellow</p>
+                            <a href="#booking" class="card-action" onclick="window.prefillBooking('Indoor Plants', 'Snake Plant')">Book Now</a>
+                        </div>
+                    </article>
+
+                    <article class="plant-card glass">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1593691509543-c55fb32e8b55?auto=format&fit=crop&w=900&q=80"
+                                alt="Tulsi plant" />
+                        </div>
+                        <div class="plant-card-content">
+                            <span style="display:inline-block; font-size:0.75rem; font-weight:700; background:var(--primary); color:#fff; padding:3px 8px; border-radius:4px; margin-bottom:5px; width: fit-content;">Medicinal Plants</span>
+                            <h3 style="margin: 0.3rem 0;">Tulsi</h3>
+                            <p style="font-size: 0.9rem; margin-bottom: 0.8rem; font-weight: 600;">Color: Green</p>
+                            <a href="#booking" class="card-action" onclick="window.prefillBooking('Medicinal Plants', 'Tulsi')">Book Now</a>
+                        </div>
+                    </article>
+
+                    <article class="plant-card glass">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?auto=format&fit=crop&w=900&q=80"
+                                alt="Rose plant" />
+                        </div>
+                        <div class="plant-card-content">
+                            <span style="display:inline-block; font-size:0.75rem; font-weight:700; background:var(--primary); color:#fff; padding:3px 8px; border-radius:4px; margin-bottom:5px; width: fit-content;">Flowering Plants</span>
+                            <h3 style="margin: 0.3rem 0;">Rose</h3>
+                            <p style="font-size: 0.9rem; margin-bottom: 0.8rem; font-weight: 600;">Color: Red</p>
+                            <a href="#booking" class="card-action" onclick="window.prefillBooking('Flowering Plants', 'Rose')">Book Now</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <span>Full Collection</span>
+                    <h2>Explore by Category</h2>
+                    <p>Browse beautiful plant collections categorized for your indoor and outdoor needs.</p>
+                </div>
+
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="color: var(--primary); margin: 0 0 1.5rem; border-bottom: 2px solid rgba(43, 122, 11, 0.2); padding-bottom: 0.5rem;">🌿 Indoor Plants</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/spiderplant,indoor?lock=1" alt="Indoor 1">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Indoor Plants', 'Peace Lily')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/snakeplant,indoor?lock=2" alt="Indoor 2">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Indoor Plants', 'Snake Plant')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/moneyplant,indoor?lock=3" alt="Indoor 3">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Indoor Plants', 'Money Plant')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/monstera,indoor?lock=4" alt="Indoor 4">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Indoor Plants', 'Spider Plant')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/zzplant,indoor?lock=5" alt="Indoor 5">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Indoor Plants', 'ZZ Plant')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/rubberplant,indoor?lock=6" alt="Indoor 6">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Indoor Plants', 'Rubber Plant')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/jadeplant,indoor?lock=7" alt="Indoor 7">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Indoor Plants', 'Jade Plant')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/fern,indoor?lock=8" alt="Indoor 8">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Indoor Plants', 'Fern')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="color: var(--primary); margin: 0 0 1.5rem; border-bottom: 2px solid rgba(43, 122, 11, 0.2); padding-bottom: 0.5rem;">🌻 Outdoor Plants</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/mangotree,sapling?lock=9" alt="Outdoor 1">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Outdoor Plants', 'Mango Plant')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/neemtree,outdoor?lock=10" alt="Outdoor 2">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Outdoor Plants', 'Neem Tree')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/bougainvillea,plant?lock=11" alt="Outdoor 3">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Outdoor Plants', 'Bougainvillea')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/rosetree,outdoor?lock=12" alt="Outdoor 4">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Outdoor Plants', 'Rose')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/palmtree,outdoor?lock=13" alt="Outdoor 5">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Outdoor Plants', 'Palm Tree')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/ficus,outdoor?lock=14" alt="Outdoor 6">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Outdoor Plants', 'Ficus')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/pinetree,outdoor?lock=15" alt="Outdoor 7">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Outdoor Plants', 'Pine Tree')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/banyantree,outdoor?lock=16" alt="Outdoor 8">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Outdoor Plants', 'Banyan Tree')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="color: var(--primary); margin: 0 0 1.5rem; border-bottom: 2px solid rgba(43, 122, 11, 0.2); padding-bottom: 0.5rem;">🌸 Flowering Plants</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/redrose,flower?lock=17" alt="Flowering 1">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Flowering Plants', 'Rose')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/sunflower,bloom?lock=18" alt="Flowering 2">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Flowering Plants', 'Sunflower')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/jasmine,flower?lock=19" alt="Flowering 3">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Flowering Plants', 'Jasmine')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/marigold,flower?lock=20" alt="Flowering 4">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Flowering Plants', 'Marigold')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/hibiscus,flower?lock=21" alt="Flowering 5">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Flowering Plants', 'Hibiscus')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/orchid,flower?lock=22" alt="Flowering 6">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Flowering Plants', 'Orchid')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/lotus,flower?lock=23" alt="Flowering 7">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Flowering Plants', 'Lotus')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/tulip,flower?lock=24" alt="Flowering 8">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Flowering Plants', 'Tulip')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary); margin: 0 0 1.5rem; border-bottom: 2px solid rgba(43, 122, 11, 0.2); padding-bottom: 0.5rem;">🌱 Medicinal Plants</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/aloevera,plant?lock=25" alt="Medicinal 1">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Medicinal Plants', 'Aloe Vera')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/tulsi,herb?lock=26" alt="Medicinal 2">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Medicinal Plants', 'Tulsi')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/neem,herb?lock=27" alt="Medicinal 3">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Medicinal Plants', 'Neem')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/mint,herb?lock=28" alt="Medicinal 4">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Medicinal Plants', 'Mint')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/ashwagandha,herb?lock=29" alt="Medicinal 5">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Medicinal Plants', 'Ashwagandha')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/turmeric,root?lock=30" alt="Medicinal 6">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Medicinal Plants', 'Turmeric')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/ginger,plant?lock=31" alt="Medicinal 7">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Medicinal Plants', 'Ginger')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                        <div class="gallery-card glass">
+                            <img src="https://loremflickr.com/800/800/lemongrass,herb?lock=32" alt="Medicinal 8">
+                            <div style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; z-index: 5;">
+                                <a href="#booking" class="btn" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="window.prefillBooking('Medicinal Plants', 'Lemongrass')">Book Now 🌱</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="booking">
+            <div class="container">
+                <div class="section-heading">
+                    <span>Reserve Your Plant</span>
+                    <h2>Direct Booking Form</h2>
+                    <p>Select your desired botanical companion and arrange for doorstep delivery.</p>
+                </div>
+
+                <div style="max-width: 600px; margin: 0 auto;" class="glass about-copy">
+                    <form id="onlineBookingForm" onsubmit="event.preventDefault(); saveData();">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Plant
+                                Category</label>
+                            <select id="plantCategory"
+                                style="width:100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(43, 122, 11, 0.2); font-family: 'Poppins';"
+                                required>
+                                <option value="" disabled selected>Select Category First</option>
+                                <option value="Indoor Plants">Indoor Plants</option>
+                                <option value="Outdoor Plants">Outdoor Plants</option>
+                                <option value="Flowering Plants">Flowering Plants</option>
+                                <option value="Medicinal Plants">Medicinal Plants</option>
+                                <option value="Decorative Plants">Decorative Plants</option>
+                                <option value="Herbal Plants">Herbal Plants</option>
+                                <option value="Fruits">Fruits</option>
+                                <option value="Vegetable Plants">Vegetable Plants</option>
+                                <option value="Cash Crop">Cash Crop</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Select
+                                Plant Name</label>
+                            <select id="plantSelect"
+                                style="width:100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(43, 122, 11, 0.2); font-family: 'Poppins';"
+                                required>
+                                <option value="" disabled selected>Select Category First</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Plant
+                                Size / Variety</label>
+                            <select id="varietySelect"
+                                style="width:100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(43, 122, 11, 0.2); font-family: 'Poppins';"
+                                required>
+                                <option value="" disabled selected>Select Plant First</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Quantity</label>
+                            <input type="number" id="plantQuantity" min="1" value="1"
+                                style="width:100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(43, 122, 11, 0.2); font-family: 'Poppins';"
+                                required>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div
+                                style="flex: 1; background: rgba(125, 209, 59, 0.2); padding: 1rem; border-radius: 12px;">
+                                <label
+                                    style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Estimated
+                                    Cost</label>
+                                <div style="font-size: 1.5rem; font-weight: 800; color: var(--text);">₹<span
+                                        id="calculatedCost">0</span></div>
+                            </div>
+                            <div
+                                style="flex: 1; background: rgba(125, 209, 59, 0.2); padding: 1rem; border-radius: 12px;">
+                                <label
+                                    style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Availability</label>
+                                <div style="font-size: 1.2rem; font-weight: 800; color: var(--text);"
+                                    id="plantAvailability">-</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Full
+                                Name</label>
+                            <input type="text" id="bookingName" placeholder="Enter your full name"
+                                style="width:100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(43, 122, 11, 0.2); font-family: 'Poppins';"
+                                required>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Mobile
+                                Number</label>
+                            <input type="tel" id="bookingMobile" placeholder="e.g. 9876543210"
+                                style="width:100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(43, 122, 11, 0.2); font-family: 'Poppins';"
+                                required>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Delivery
+                                Address</label>
+                            <textarea id="bookingAddress" rows="3"
+                                placeholder="Enter your full home sanctuary address..."
+                                style="width:100%; padding: 1rem; border-radius: 12px; border: 2px solid rgba(43, 122, 11, 0.2); font-family: 'Poppins';"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn pulse-glow"
+                            style="width:100%; font-size:1.1rem; padding: 1rem;">
+                            Confirm Booking 🌱
+                        </button>
+                    </form>
+
+                    <!-- Booking Summary Section (Hidden initially) -->
+                    <div id="bookingSummarySection"
+                        style="display:none; padding: 1.5rem; background: rgba(255,255,255,0.9); border-radius: 12px; text-align: center;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">📦 Booking Summary</h3>
+
+                        <div
+                            style="text-align: left; background: rgba(125, 209, 59, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p><strong>🌿 Selected Plant:</strong> <span id="summaryPlant"></span></p>
+                            <p><strong>🌱 Variety:</strong> <span id="summaryVariety"></span></p>
+                            <p><strong>📦 Quantity:</strong> <span id="summaryQuantity"></span></p>
+                            <p><strong>💰 Total Cost:</strong> <span id="summaryTotal"></span></p>
+                            <p style="font-size: 1.2rem; color: #d9534f; margin-top: 5px;"><strong>💸 Advance Payment
+                                    (50%): <span id="summaryAdvance"></span></strong></p>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="margin-bottom: 10px;">💳 Pay Advance Now</h4>
+                            <img src="images/qr.png" alt="Payment Scanner Image"
+                                style="border: 2px solid var(--primary); border-radius: 8px; padding: 5px;">
+                            <p style="margin-top: 5px; font-size: 0.9rem; color: #555;">Scan & Pay Advance Amount</p>
+                        </div>
+
+                        <button id="btnHavePaid" class="btn pulse-glow"
+                            style="width:100%; font-size:1.1rem; padding: 1rem; background: var(--primary);">👉 I Have
+                            Paid</button>
+                    </div>
+
+                    <div id="bookingSuccessMsg"
+                        style="display:none; color: var(--primary); font-weight: 700; text-align: center; margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.8); border-radius:12px;">
+                        ✅ Booking Confirmed Successfully!<br>We will contact you shortly.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-shell glass">
+                <div class="footer-grid">
+                    <div class="footer-block">
+                        <h3>🌿 GreenGrow Nursery</h3>
+                        <p>Book healthy plants online with a simple, eco-friendly nursery system built for modern
+                            customers.</p>
+                    </div>
+                    <div class="footer-block">
+                        <h3>Contact Details</h3>
+                        <p>Email: support@Nisargenursery.com</p>
+                        <p>Phone: +91 98765 43210</p>
+                        <p>Address: Lake View Road, Green City</p>
+                    </div>
+                    <div class="footer-block">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#contact">Facebook</a>
+                            <a href="#contact">Instagram</a>
+                            <a href="#contact">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">© 2026 GreenGrow Nursery. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+        <div class="glass" style="width: 100%; max-width: 400px; padding: 2.5rem; border-radius: 20px; position: relative; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <button onclick="closeLoginModal()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text);">&times;</button>
+            <h2 style="color: var(--primary); margin-bottom: 0.5rem; font-weight: 800;">Login</h2>
+            <p style="color: var(--text); font-size: 0.9rem; margin-bottom: 1.5rem;">Please login to our website to continue booking.</p>
+            <form onsubmit="event.preventDefault(); handleModalLogin();">
+                <div style="margin-bottom: 1.2rem; text-align: left;">
+                    <label style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Username</label>
+                    <input type="text" id="modalUsername" placeholder="Enter username" required style="width:100%; padding: 0.8rem; border-radius: 10px; border: 2px solid rgba(43, 122, 11, 0.2); font-family: 'Poppins';">
+                </div>
+                <div style="margin-bottom: 1.5rem; text-align: left;">
+                    <label style="display:block; font-weight:700; color:var(--primary); margin-bottom:5px;">Password</label>
+                    <input type="password" id="modalPassword" placeholder="Enter password" required style="width:100%; padding: 0.8rem; border-radius: 10px; border: 2px solid rgba(43, 122, 11, 0.2); font-family: 'Poppins';">
+                </div>
+                <button type="submit" class="btn pulse-glow" style="width:100%; font-size: 1.1rem; padding: 1rem;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
